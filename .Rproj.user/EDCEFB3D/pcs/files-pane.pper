@@ -1,0 +1,9 @@
+{
+    "path" : "~/Coursera/Getting and CLeaning/Week 3 Project/UCI HAR Dataset",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

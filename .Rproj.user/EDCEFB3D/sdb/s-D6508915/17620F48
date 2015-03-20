@@ -1,0 +1,17 @@
+{
+    "contents" : "s <- c(1,1,2,2,3,3,1,2,3)\nlookup <- data.frame(id=c(1:3), value=c(\"a\", \"b\", \"c\"))\nsapply(s, function(x) lookup$value[x])\n\ns <- data.frame(col1 = c(1,1,2,2,3,3,1,2,3,1),\n                col2 = c(1:10),\n                col3 = c(101:110))\n\n# applies to all columns -- not what we want\n# sapply(s, function(x, y) y[x], y=lookup$value)\n#\n# apply(s[,c('col1')], 1, function(x) lookup$value[x])\n# This one does not work.  Use of dim(x) returns null\n#   because class(s[,c('col1')]) is numeric, not a data frame\n#   this needs to be a data,frame cast.\n# \n\napply(as.data.frame(s[,c('col1')]), 1, function(x) lookup$value[x])\n\ndat <- data.frame (x=c(1,2), y=c(3,4), z=c(5,6))\napply(dat[,c('x','z')], 1, function(x) sum(x))\n",
+    "created" : 1426861690664.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1110275331",
+    "id" : "17620F48",
+    "lastKnownWriteTime" : 1426866646,
+    "path" : "~/Coursera/Getting and CLeaning/Week 3 Project/sApplyEx.R",
+    "project_path" : "sApplyEx.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
