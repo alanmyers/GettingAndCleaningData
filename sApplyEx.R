@@ -1,3 +1,4 @@
+#comment added to test git hub
 s <- c(1,1,2,2,3,3,1,2,3)
 lookup <- data.frame(id=c(1:3), value=c("a", "b", "c"))
 sapply(s, function(x) lookup$value[x])
