@@ -1,3 +1,4 @@
+library(dplyr)
 #run_analysis helper functions:
 #
 #  GetTheData -- Load files into R.
