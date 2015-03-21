@@ -11,6 +11,8 @@
 #    Activity  - WALKING, WALKING UPSTAIRS, ETC
 #    mean(observations)
 #    std(observations)
+#  GroupTheData
+#    Group and Summarize by subjectID and ActivityName.
 #
 GetTheData <- function(nbRows) {
   # nbRows --> loading data... Avoid long processing times
@@ -80,7 +82,10 @@ GetTheData <- function(nbRows) {
   fullData <- rbind(testData, trainData)
   return(fullData)
 }
-
+#
+# remove all columns that are not Mean or Standrd Deviations.
+# Insert subjectId and activityName as the first two columns.
+#
 ReduceTheData <- function(fullData) {
   newNames <- vector()
   
@@ -108,12 +113,26 @@ ReduceTheData <- function(fullData) {
   names(DataSet) <- as.vector(newNames)
   return(DataSet)
 }
-
+#
+# Group the data by subjectId and ActivityName, then for each  grouping, apply the mean function
+#
+GroupTheData <-function(ds) {
+  retData <- group_by(ds, subjectId, activityName, rm.na=TRUE) %>% summarise_each(funs(mean))
+    
+  return(retData)
+}
+# 
+# run_analysis(nbRows)
+#   nbRows = -1 --> pull all data
+#   nbRows = 100 --> pull only first 100 records out of observation files.  (speed up testing)
+# 
 run_analysis <- function(nbRows = -1)
 {
   fullData <- GetTheData(nbRows)
   
   DataSet <- ReduceTheData(fullData)
   
-  return(DataSet)
+  retData <- GroupTheData(DataSet)
+    
+  return(retData)
 }
