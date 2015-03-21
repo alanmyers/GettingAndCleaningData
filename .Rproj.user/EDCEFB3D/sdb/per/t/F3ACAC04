@@ -1,0 +1,22 @@
+{
+    "contents" : "",
+    "created" : 1426881645669.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "F3ACAC04",
+    "lastKnownWriteTime" : 31244048835477601,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "caption" : "DataSet",
+        "contentUrl" : "content?title=DataSet&file=4644b353313340aba58ea6d61fb95093.htm",
+        "displayedObservations" : 200,
+        "displayedVariables" : 88,
+        "totalObservations" : 200,
+        "variables" : 88
+    },
+    "source_on_save" : false,
+    "type" : "r_dataframe"
+}
