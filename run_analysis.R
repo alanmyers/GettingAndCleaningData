@@ -117,7 +117,7 @@ ReduceTheData <- function(fullData) {
 # Group the data by subjectId and ActivityName, then for each  grouping, apply the mean function
 #
 GroupTheData <-function(ds) {
-  retData <- group_by(ds, subjectId, activityName, rm.na=TRUE) %>% summarise_each(funs(mean))
+  retData <- group_by(ds, subjectId, activityName) %>% summarise_each(funs(mean))
     
   return(retData)
 }
