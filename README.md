@@ -18,6 +18,12 @@ Calls the following three helper functions.
 
 run_analysis returns a DataFrame which is grouped by SubjectId and ActivityName, and the values are all averages / means for that grouping
 
+Example Execution
+-----------------
+ds <- run_analysis()
+
+write.table(ds, "proj.txt", row.name=FALSE)
+
 More Info
 ---------
 See CodeBook.MD for details on the feature data, and various files that are used to pull it all together.  Namely
